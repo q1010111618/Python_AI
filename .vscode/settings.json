@@ -1,0 +1,36 @@
+{
+    "python.defaultInterpreterPath": "e:\\myProject\\Python_AI\\venv\\Scripts\\python.exe",
+    
+    // ========== CodeBuddy AI 代码补全 (NES) 设置 ==========
+    "codingcopilot.enable": true,
+    "codingcopilot.enableAutoCompletions": true,
+    "codingcopilot.enableNextEditSuggestions": true,
+    "codingcopilot.suggestionDelay": 100,
+    "editor.inlineSuggest.enabled": true,
+    "[python]": {
+        "codingcopilot.enableAutoCompletions": true
+    },
+    
+    // ========== basedpyright 类型提示级别 ==========
+    // 关闭 Unknown 相关提示，只保留真正的错误
+    "basedpyright.analysis.diagnosticSeverityOverrides": {
+        "reportUnknownVariableType": "none",
+        "reportUnknownArgumentType": "none",
+        "reportUnknownParameterType": "none",
+        "reportMissingParameterType": "none",
+        "reportMissingTypeStubs": "none"
+    },
+
+    // ========== CSV 表格视图 ==========
+    // 双击 csv 直接用 Excel Viewer 的表格视图打开（只读预览）
+    "workbench.editorAssociations": {
+        "*.csv": "gc-excelviewer-csv-editor"
+    },
+    // Edit csv 没有注册自定义编辑器，不能设为双击默认，
+    // 需右键文件 → "Edit CSV"（或命令面板搜 "CSV: Edit CSV"）
+    "csv-edit.tryToGuessHasHeader": true,
+    "csv-edit.fontSizeInPx": 14,
+    "csv-edit.initialColumnWidth": 160,
+    "csv-edit.enableWrapping": true,
+    "csv-edit.shouldWatchCsvSourceFile": true
+}

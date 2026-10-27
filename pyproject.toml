@@ -1,0 +1,39 @@
+[tool.basedpyright]
+pythonVersion = "3.11"
+pythonPlatform = "Windows"
+
+# Streamlit 等 UI 框架的渲染调用（st.title、st.write 等）会返回 DeltaGenerator 对象，
+# 按框架惯例直接丢弃返回值即可，无需逐个赋值，故关闭该警告
+reportUnusedCallResult = false
+
+# Streamlit 的 dataframe/table/line_chart 等方法签名故意接受任意类型数据（含 Unknown），
+# 属于第三方库类型定义噪音，无法通过改进业务代码消除，故关闭该警告
+reportUnknownMemberType = false
+
+# Streamlit 的 st.session_state 是运行时动态容器，官方类型定义中其成员均为 Any；
+# 读写会话状态时产生 Any 属框架设计特性，无法通过代码消除，故关闭该警告
+reportAny = false
+
+# lxml 未提供官方类型存根，xpath() 返回值类型无法推断，
+# 会在整条调用链上产生大量 Unknown 提示（属第三方库类型缺失噪音），故关闭
+reportMissingTypeStubs = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+reportUnknownParameterType = false
+
+# 学习/脚本阶段不强制要求为每个参数写类型注解
+reportMissingParameterType = false
+
+# 学习阶段不强制要求 __init__ 里调用 super().__init__()（很多示例类直接继承 object）
+reportMissingSuperCall = false
+
+# 学习阶段不强制要求覆写方法时加 @override 装饰器（Python 3.11 的 typing 里还没有 override）
+reportImplicitOverride = false
+
+# 教学示例中的多继承（如「问界汽车(Car, HuaweiAiDriving)」）会在子类里显式调用各父类 __init__，
+# 而非严格的协作式 super() 链，静态检查无法证明父类初始化一定执行，故关闭该检查
+# 注意：pyproject.toml 里规则要平铺在 [tool.basedpyright] 下才会被读取
+reportUnsafeMultipleInheritance = false
+
+[tool.basedpyright.analysis]
+reportUnsafeMultipleInheritance = false

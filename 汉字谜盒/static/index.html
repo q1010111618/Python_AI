@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>汉字谜盒 · 猜字谜游戏</title>
+<!-- 禁用缓存：避免改了 CSS/JS 后浏览器仍用旧文件（?v= 是版本号，改完随手 +1 即可） -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" href="style.css?v=15">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ======================= 左侧：控制台 ======================= -->
+  <aside class="sidebar">
+    <header class="panel-head">
+      <span class="head-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="3.2"></circle>
+          <path d="M12 2.6v3M12 18.4v3M2.6 12h3M18.4 12h3M5.4 5.4l2.1 2.1M16.5 16.5l2.1 2.1M18.6 5.4l-2.1 2.1M7.5 16.5l-2.1 2.1"></path>
+        </svg>
+      </span>
+      <h1>汉字谜盒控制台</h1>
+    </header>
+
+    <div class="sidebar-body">
+      <button class="btn-new" id="btnNewGame" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M12 5v14M5 12h14"></path>
+        </svg>
+        <span>新建游戏</span>
+      </button>
+
+      <p class="side-label">游戏记录</p>
+      <ul class="record-list" id="recordList"></ul>
+    </div>
+  </aside>
+
+  <!-- ======================= 中间：聊天区 ======================= -->
+  <main class="chat">
+    <header class="panel-head chat-head">
+      <span class="head-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+          <path d="M8.5 9.5h7M8.5 14h4"></path>
+        </svg>
+      </span>
+      <div class="chat-title">
+        <h2>汉字谜盒</h2>
+        <p>会话名称：<span id="sessionName">创建中…</span></p>
+      </div>
+      <span class="status-dot" title="AI 在线"></span>
+    </header>
+
+    <div class="chat-scroll" id="chatScroll">
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input type="text" id="answerInput" placeholder="输入你的答案，或者回复我要新题目~">
+      <button class="btn-send" type="submit" title="发送">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.5 2.5 11 13"></path>
+          <path d="M21.5 2.5 15 21.5l-4-8.5-8.5-4z"></path>
+        </svg>
+      </button>
+    </form>
+  </main>
+
+  <!-- ======================= 右侧：游戏简介 ======================= -->
+  <aside class="intro">
+    <header class="panel-head">
+      <span class="head-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9z"></path>
+        </svg>
+      </span>
+      <h1>游戏简介</h1>
+    </header>
+
+    <div class="intro-body">
+      <p class="intro-lead">
+        汉字谜盒是一款基于人工智能的字谜互动游戏，专为汉字爱好者设计。在这里，你将与AI机器人进行有趣的猜字谜挑战！
+      </p>
+
+      <section class="intro-block">
+        <h3><span class="spark">✦</span>核心玩法</h3>
+        <p class="intro-text">
+          AI会抛出一道经典字谜（如“一口咬掉牛尾巴”），你需要根据谜面提示猜出对应的汉字。AI会根据你的答案给出相应的提示，并给出最终的答案。
+        </p>
+      </section>
+
+      <section class="intro-block">
+        <h3><span class="spark">✦</span>特色功能</h3>
+        <ul class="dot-list">
+          <li><b>智能判断：</b>AI精准判断你的答案是否正确，答对后即触发更多</li>
+          <li><b>贴心提示：</b>猜错时提供线索引导，不会直接透露答案</li>
+          <li><b>无限挑战：</b>每次出题完全随机，永不重复</li>
+          <li><b>会话记忆：</b>游戏记录自动保存，随时回顾精彩对局</li>
+        </ul>
+      </section>
+
+      <section class="intro-block">
+        <h3><span class="spark">✦</span>适合人群</h3>
+        <ul class="dot-list">
+          <li>汉字文化爱好者</li>
+          <li>语文学习辅助工具</li>
+          <li>课堂教学演示素材</li>
+          <li>休闲娱乐解谜玩家</li>
+        </ul>
+      </section>
+
+      <div class="intro-cta">
+        快来挑战你的汉字智慧，在轻松互动中感受汉字的无穷魅力！
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 优先用本地 jQuery（离线也能打开），缺失时回退到 CDN -->
+<script src="jquery.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"><\/script>');
+</script>
+<script src="script.js?v=15"></script>
+</body>
+</html>

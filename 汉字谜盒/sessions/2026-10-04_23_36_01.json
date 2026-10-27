@@ -1,0 +1,77 @@
+{
+  "current_session": "2026-10-04_23_36_01",
+  "message": [
+    {
+      "role": "user",
+      "content": ""
+    },
+    {
+      "role": "assistant",
+      "content": "你好呀！来猜个字谜吧：“综合门市”（打一字）"
+    },
+    {
+      "role": "user",
+      "content": "阁"
+    },
+    {
+      "role": "assistant",
+      "content": "不对哦，再想想~给你个提示：门里面热热闹闹的。"
+    },
+    {
+      "role": "user",
+      "content": "闹"
+    },
+    {
+      "role": "assistant",
+      "content": "太棒了！答对了！就是“闹”字！要不要再来一题？"
+    },
+    {
+      "role": "user",
+      "content": "来"
+    },
+    {
+      "role": "assistant",
+      "content": "好嘞，新题来啦：“半青半紫”（打一字）"
+    },
+    {
+      "role": "user",
+      "content": "再给点提示"
+    },
+    {
+      "role": "assistant",
+      "content": "把“青”的上半部分和“紫”的下半部分合起来看看，就是那个字啦。"
+    },
+    {
+      "role": "user",
+      "content": "素"
+    },
+    {
+      "role": "assistant",
+      "content": "太棒了！答对了！就是“素”字！要不要再来一题？"
+    },
+    {
+      "role": "user",
+      "content": "来"
+    },
+    {
+      "role": "assistant",
+      "content": "好嘞，新题来啦：“需要一半，留下一半”（打一字）"
+    },
+    {
+      "role": "user",
+      "content": "雷"
+    },
+    {
+      "role": "assistant",
+      "content": "太棒了！答对了！就是“雷”字！要不要再来一题？"
+    },
+    {
+      "role": "user",
+      "content": "不要了"
+    },
+    {
+      "role": "assistant",
+      "content": "好的，随时欢迎再来猜字谜！再见啦~"
+    }
+  ]
+}
